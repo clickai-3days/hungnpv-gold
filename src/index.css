@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  
+  --color-gold: #D4AF37;
+  --color-gold-light: #F1D592;
+  --color-ruby: #9B111E;
+  --color-midnight: #050505;
+  --color-glass: rgba(255, 255, 255, 0.08);
+  --color-glass-border: rgba(212, 175, 55, 0.3);
+  --color-text-dim: #A0A0A0;
+}
+
+@layer base {
+  body {
+    @apply bg-midnight text-white font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    @apply bg-clip-text text-transparent bg-linear-to-r from-gold via-gold-light to-gold;
+  }
+  
+  .bg-gold-gradient {
+    @apply bg-linear-to-r from-gold via-gold-light to-gold;
+  }
+  
+  .glass {
+    @apply bg-glass backdrop-blur-xl border border-glass-border;
+  }
+  
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-lg border border-white/10;
+  }
+
+  .btn-primary {
+    @apply bg-gold text-midnight px-8 py-3 rounded-none uppercase font-bold text-sm tracking-widest transition-all duration-300 hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply border border-gold text-gold px-8 py-3 rounded-none uppercase font-bold text-sm tracking-widest transition-all duration-300 hover:bg-gold hover:text-midnight active:scale-95;
+  }
+
+  .animate-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .animate-shine::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(transparent, rgba(255,255,255,0.4), transparent);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+  }
+
+  @keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+}
