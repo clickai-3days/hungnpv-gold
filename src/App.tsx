@@ -93,20 +93,20 @@ export default function App() {
     <div className="min-h-screen selection:bg-gold selection:text-white">
       {/* Header */}
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-gold/20 ${
-          scrolled ? "bg-midnight/95 backdrop-blur-md py-3 shadow-2xl" : "bg-midnight/50 py-6"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-gold/10 ${
+          scrolled ? "bg-white/95 backdrop-blur-md py-3 shadow-lg" : "bg-white/50 py-6"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 bg-gold-gradient rounded-full flex items-center justify-center shadow-lg shadow-gold/20">
-              <Diamond className="text-midnight w-6 h-6" />
+              <Diamond className="text-white w-6 h-6" />
             </div>
             <div className="flex flex-col">
-              <span className={`text-xl font-serif font-bold tracking-widest leading-none ${scrolled ? "text-gold" : "text-white"}`}>
+              <span className="text-xl font-serif font-bold tracking-widest leading-none text-gold">
                 BẢO TÍN
               </span>
-              <span className={`text-xs tracking-[0.3em] font-medium ${scrolled ? "text-white/80" : "text-gold-light"}`}>
+              <span className="text-xs tracking-[0.3em] font-medium text-midnight/80">
                 MINH HƯNG
               </span>
             </div>
@@ -118,9 +118,7 @@ export default function App() {
               <a 
                 key={item} 
                 href={`#${item}`} 
-                className={`text-sm uppercase tracking-widest font-medium transition-colors hover:text-gold ${
-                  scrolled ? "text-white/90" : "text-white"
-                }`}
+                className="text-sm uppercase tracking-widest font-medium transition-colors hover:text-gold text-midnight/90"
               >
                 {item}
               </a>
@@ -135,7 +133,7 @@ export default function App() {
             </button>
             
             <button 
-              className="md:hidden text-white p-2"
+              className="md:hidden text-midnight p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X /> : <Menu />}
@@ -148,12 +146,12 @@ export default function App() {
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="md:hidden absolute top-full left-0 right-0 bg-midnight border-t border-white/10 p-6 flex flex-col gap-6"
+            className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-midnight/10 p-6 flex flex-col gap-6"
           >
             {["Trang chủ", "Trang sức cưới", "Vàng 9999", "Bảng giá vàng", "Liên hệ"].map((item) => (
-              <a key={item} href="#" className="text-white text-lg font-serif tracking-wide">{item}</a>
+              <a key={item} href="#" className="text-midnight text-lg font-serif tracking-wide">{item}</a>
             ))}
-            <button className="w-full bg-gold-gradient py-4 rounded-xl text-midnight font-bold uppercase tracking-widest">
+            <button className="w-full bg-gold-gradient py-4 rounded-none text-white font-bold uppercase tracking-widest">
               Tư vấn Zalo
             </button>
           </motion.div>
@@ -161,15 +159,15 @@ export default function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-midnight">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-white">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=2000" 
             alt="Luxury Jewelry Crafting" 
-            className="w-full h-full object-cover opacity-50 scale-105"
+            className="w-full h-full object-cover opacity-20 scale-105"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-linear-to-b from-midnight/80 via-transparent to-midnight" />
+          <div className="absolute inset-0 bg-linear-to-b from-white/80 via-transparent to-white" />
         </div>
 
         <motion.div 
@@ -181,14 +179,14 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-gold-light tracking-[0.5em] uppercase text-sm font-semibold mb-6 block">
+            <span className="text-gold tracking-[0.5em] uppercase text-sm font-semibold mb-6 block">
               Tinh Hoa Chế Tác - Giữ Trọn Niềm Tin
             </span>
-            <h1 className="text-5xl md:text-8xl text-white font-bold mb-8 leading-[1.1]">
+            <h1 className="text-5xl md:text-8xl text-midnight font-bold mb-8 leading-[1.1]">
               BẢO TÍN MINH HƯNG <br />
               <span className="text-gold-gradient italic">Tôn Vinh Vẻ Đẹp</span>
             </h1>
-            <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+            <p className="text-midnight/70 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
               Trang sức cao cấp - Chế tác tinh xảo - Bảo chứng niềm tin. <br className="hidden md:block" />
               Khám phá những tuyệt tác kim hoàn được tạo nên từ tâm huyết của những nghệ nhân bậc thầy.
             </p>
@@ -207,16 +205,16 @@ export default function App() {
         <motion.div 
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/40"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-midnight/40"
         >
-          <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center p-1">
+          <div className="w-6 h-10 border-2 border-midnight/20 rounded-full flex justify-center p-1">
             <div className="w-1 h-2 bg-gold rounded-full" />
           </div>
         </motion.div>
       </section>
 
       {/* Gold Price Board */}
-      <section className="py-24 px-6 bg-midnight relative overflow-hidden border-t border-gold/10">
+      <section className="py-24 px-6 bg-white relative overflow-hidden border-t border-gold/10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gold">Bảng Giá Vàng Trực Tuyến</h2>
@@ -236,27 +234,27 @@ export default function App() {
               >
                 <div className="absolute top-0 right-0 p-4">
                   {item.trend === "up" ? (
-                    <ArrowUpRight className="text-green-400 w-6 h-6" />
+                    <ArrowUpRight className="text-green-600 w-6 h-6" />
                   ) : (
                     <ArrowDownRight className="text-ruby w-6 h-6" />
                   )}
                 </div>
-                <h3 className="text-gold-light font-bold text-lg mb-6 tracking-wide">{item.type}</h3>
+                <h3 className="text-gold font-bold text-lg mb-6 tracking-wide">{item.type}</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-end">
-                    <span className="text-white/50 text-xs uppercase tracking-widest">Mua vào</span>
-                    <span className="text-white text-2xl font-serif font-bold">{item.buy} <span className="text-sm font-sans font-normal opacity-60">Tr/Lượng</span></span>
+                    <span className="text-midnight/50 text-xs uppercase tracking-widest">Mua vào</span>
+                    <span className="text-midnight text-2xl font-serif font-bold">{item.buy} <span className="text-sm font-sans font-normal opacity-60">Tr/Lượng</span></span>
                   </div>
                   <div className="flex justify-between items-end">
-                    <span className="text-white/50 text-xs uppercase tracking-widest">Bán ra</span>
+                    <span className="text-midnight/50 text-xs uppercase tracking-widest">Bán ra</span>
                     <span className="text-gold text-2xl font-serif font-bold">{item.sell} <span className="text-sm font-sans font-normal opacity-60">Tr/Lượng</span></span>
                   </div>
                 </div>
-                <div className="mt-6 pt-6 border-t border-white/10 flex items-center justify-between">
-                  <span className={`text-xs font-bold uppercase ${item.trend === "up" ? "text-green-400" : "text-ruby"}`}>
+                <div className="mt-6 pt-6 border-t border-midnight/10 flex items-center justify-between">
+                  <span className={`text-xs font-bold uppercase ${item.trend === "up" ? "text-green-600" : "text-ruby"}`}>
                     {item.trend === "up" ? "+0.45%" : "-0.12%"}
                   </span>
-                  <button className="text-white/40 hover:text-gold transition-colors">
+                  <button className="text-midnight/40 hover:text-gold transition-colors">
                     <ChevronRight className="w-5 h-5" />
                   </button>
                 </div>
@@ -267,14 +265,14 @@ export default function App() {
       </section>
 
       {/* Featured Collections */}
-      <section className="py-24 px-6 bg-midnight text-white">
+      <section className="py-24 px-6 bg-white text-midnight">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
               <span className="text-gold tracking-[0.3em] uppercase text-xs font-bold mb-4 block">Tuyệt Tác Kim Hoàn</span>
               <h2 className="text-4xl md:text-6xl font-bold">Bộ Sưu Tập Nổi Bật</h2>
             </div>
-            <button className="group flex items-center gap-2 text-gold-light hover:text-gold transition-colors tracking-widest uppercase text-sm font-bold">
+            <button className="group flex items-center gap-2 text-gold hover:text-gold-light transition-colors tracking-widest uppercase text-sm font-bold">
               Xem tất cả <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
@@ -287,7 +285,7 @@ export default function App() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: idx * 0.2 }}
                 viewport={{ once: true }}
-                className="relative h-[500px] group cursor-pointer overflow-hidden rounded-3xl"
+                className="relative h-[500px] group cursor-pointer overflow-hidden rounded-none border border-midnight/5"
               >
                 <img 
                   src={col.image} 
@@ -295,17 +293,17 @@ export default function App() {
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-midnight via-midnight/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                <div className="absolute inset-0 bg-linear-to-t from-white via-white/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
                 
-                <div className="absolute inset-0 border-0 group-hover:border-2 border-gold/50 m-4 rounded-2xl transition-all duration-500 scale-105 group-hover:scale-100 opacity-0 group-hover:opacity-100" />
+                <div className="absolute inset-0 border-0 group-hover:border-2 border-gold/50 m-4 rounded-none transition-all duration-500 scale-105 group-hover:scale-100 opacity-0 group-hover:opacity-100" />
 
                 <div className="absolute bottom-0 left-0 p-10 w-full">
-                  <div className="w-12 h-12 bg-gold/20 backdrop-blur-md rounded-full flex items-center justify-center text-gold mb-6 group-hover:bg-gold group-hover:text-midnight transition-all duration-500">
+                  <div className="w-12 h-12 bg-gold/10 backdrop-blur-md rounded-full flex items-center justify-center text-gold mb-6 group-hover:bg-gold group-hover:text-white transition-all duration-500">
                     {col.icon}
                   </div>
-                  <span className="text-gold-light text-xs uppercase tracking-[0.3em] mb-2 block">{col.subtitle}</span>
+                  <span className="text-gold text-xs uppercase tracking-[0.3em] mb-2 block">{col.subtitle}</span>
                   <h3 className="text-3xl font-bold mb-4 group-hover:text-gold transition-colors">{col.title}</h3>
-                  <button className="flex items-center gap-2 text-white/60 group-hover:text-white transition-colors text-sm uppercase tracking-widest">
+                  <button className="flex items-center gap-2 text-midnight/60 group-hover:text-midnight transition-colors text-sm uppercase tracking-widest">
                     Khám phá ngay <ChevronRight className="w-4 h-4" />
                   </button>
                 </div>
@@ -331,7 +329,7 @@ export default function App() {
                 <div className="w-16 h-16 mx-auto mb-8 border border-gold rounded-full flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-midnight transition-all duration-500">
                   {feature.icon}
                 </div>
-                <h3 className="text-sm font-bold mb-4 tracking-[0.2em] uppercase text-gold-light">{feature.title}</h3>
+                <h3 className="text-sm font-bold mb-4 tracking-[0.2em] uppercase text-gold">{feature.title}</h3>
                 <p className="text-text-dim text-xs font-light leading-relaxed uppercase tracking-wider">
                   {feature.desc}
                 </p>
@@ -342,36 +340,36 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-midnight text-white pt-24 pb-12 px-6">
+      <footer className="bg-white text-midnight pt-24 pb-12 px-6 border-t border-gold/10">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
             <div className="lg:col-span-5">
               <div className="flex items-center gap-2 mb-8">
                 <div className="w-12 h-12 bg-gold-gradient rounded-full flex items-center justify-center">
-                  <Diamond className="text-midnight w-7 h-7" />
+                  <Diamond className="text-white w-7 h-7" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-2xl font-serif font-bold tracking-widest leading-none text-gold">
                     BẢO TÍN
                   </span>
-                  <span className="text-sm tracking-[0.3em] font-medium text-white/80">
+                  <span className="text-sm tracking-[0.3em] font-medium text-midnight/80">
                     MINH HƯNG
                   </span>
                 </div>
               </div>
-              <p className="text-white/50 mb-10 max-w-md leading-relaxed font-light">
+              <p className="text-midnight/50 mb-10 max-w-md leading-relaxed font-light">
                 Tự hào là thương hiệu vàng bạc đá quý uy tín hàng đầu tại Hưng Yên. Chúng tôi cam kết mang đến những giá trị đích thực và sự hài lòng tuyệt đối cho quý khách hàng.
               </p>
               <div className="space-y-4">
-                <div className="flex items-center gap-4 text-white/70">
+                <div className="flex items-center gap-4 text-midnight/70">
                   <MapPin className="text-gold w-5 h-5 flex-shrink-0" />
                   <span>Số 22 đường Phố Nối, Tỉnh Hưng Yên</span>
                 </div>
-                <div className="flex items-center gap-4 text-white/70">
+                <div className="flex items-center gap-4 text-midnight/70">
                   <Phone className="text-gold w-5 h-5 flex-shrink-0" />
                   <span>Hotline: 0123.456.789</span>
                 </div>
-                <div className="flex items-center gap-4 text-white/70">
+                <div className="flex items-center gap-4 text-midnight/70">
                   <Mail className="text-gold w-5 h-5 flex-shrink-0" />
                   <span>contact@baotinminhhung.vn</span>
                 </div>
@@ -380,7 +378,7 @@ export default function App() {
 
             <div className="lg:col-span-3">
               <h4 className="text-gold font-bold text-lg mb-8 tracking-widest uppercase">Liên kết nhanh</h4>
-              <ul className="space-y-4 text-white/60">
+              <ul className="space-y-4 text-midnight/60">
                 {["Về chúng tôi", "Chính sách thu đổi", "Kiểm định kim cương", "Tuyển dụng", "Tin tức & Sự kiện"].map(link => (
                   <li key={link}>
                     <a href="#" className="hover:text-gold transition-colors flex items-center gap-2 group">
@@ -394,13 +392,13 @@ export default function App() {
 
             <div className="lg:col-span-4">
               <h4 className="text-gold font-bold text-lg mb-8 tracking-widest uppercase">Nhận báo giá vàng</h4>
-              <p className="text-white/50 mb-6 font-light">Đăng ký để nhận cập nhật giá vàng hằng ngày qua Email/Zalo.</p>
+              <p className="text-midnight/50 mb-6 font-light">Đăng ký để nhận cập nhật giá vàng hằng ngày qua Email/Zalo.</p>
               <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                 <div className="relative">
                   <input 
                     type="email" 
                     placeholder="Email / Số điện thoại" 
-                    className="w-full bg-white/5 border border-gold/30 rounded-none px-6 py-4 focus:outline-none focus:border-gold transition-colors text-white text-sm"
+                    className="w-full bg-midnight/5 border border-gold/30 rounded-none px-6 py-4 focus:outline-none focus:border-gold transition-colors text-midnight text-sm"
                   />
                 </div>
                 <button className="w-full bg-ruby py-4 rounded-none text-white font-bold uppercase tracking-widest hover:bg-ruby/90 transition-all active:scale-[0.98]">
@@ -408,24 +406,24 @@ export default function App() {
                 </button>
               </form>
               <div className="flex gap-4 mt-10">
-                <a href="#" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold hover:text-midnight transition-all">
+                <a href="#" className="w-12 h-12 rounded-full bg-midnight/5 flex items-center justify-center hover:bg-gold hover:text-white transition-all">
                   <Facebook className="w-5 h-5" />
                 </a>
-                <a href="#" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold hover:text-midnight transition-all">
+                <a href="#" className="w-12 h-12 rounded-full bg-midnight/5 flex items-center justify-center hover:bg-gold hover:text-white transition-all">
                   <Instagram className="w-5 h-5" />
                 </a>
-                <a href="#" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold hover:text-midnight transition-all">
+                <a href="#" className="w-12 h-12 rounded-full bg-midnight/5 flex items-center justify-center hover:bg-gold hover:text-white transition-all">
                   <Mail className="w-5 h-5" />
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-white/40 text-sm">
+          <div className="pt-12 border-t border-midnight/10 flex flex-col md:flex-row justify-between items-center gap-6 text-midnight/40 text-sm">
             <p>&copy; 2026 Vàng Bạc Bảo Tín Minh Hưng. All rights reserved.</p>
             <div className="flex gap-8">
-              <a href="#" className="hover:text-white transition-colors">Điều khoản dịch vụ</a>
-              <a href="#" className="hover:text-white transition-colors">Chính sách bảo mật</a>
+              <a href="#" className="hover:text-midnight transition-colors">Điều khoản dịch vụ</a>
+              <a href="#" className="hover:text-midnight transition-colors">Chính sách bảo mật</a>
             </div>
           </div>
         </div>
